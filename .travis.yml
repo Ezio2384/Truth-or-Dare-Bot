@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "6.1"
+install:
+    - npm install discord.js --save
+    - npm install open --save
+    - npm install request
+script: node runbot.js   
+    

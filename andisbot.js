@@ -82,11 +82,11 @@ bot.on("message", function(msg) {
   
   if (myMsg.indexOf("<@" + bot.user.id + "> queue") == 0) {
 	  console.log(myMsg);
+	  userList[counter] = myMsg.split(" ")[2];
+	  
 	  counter++;
 	  currentPlayer++;
-	  userList[counter] = myMsg.split(" ")[2];
-	  //list = list + counter + " - " + myMsg.split(" ")[2] + "\n";
-	  msg.reply(userList[counter] + " joined the game!");
+	  msg.reply(userList[counter-1] + " joined the game!");
   }
   
   if (myMsg.indexOf("<@" + bot.user.id + "> leave") == 0) {
@@ -107,10 +107,10 @@ bot.on("message", function(msg) {
 	  var reply = "--- Current userlist ---" + "\n";
 	  
 	  for(var i = 1; i < userList.length; i++){
-		  if(userList[i] == currentPlayer){
+		  if((i-1) === currentPlayer){
 			  reply = reply + "--> ";
 		  }
-		  reply = reply + i + ": " + userList[i] + "\n";
+		  reply = reply + i + ": " + userList[i-1] + "\n";
 	  }
 	  
 	  reply = reply + "--- To randomize use the command shuffle! The player with --> is the current player ---";
@@ -119,7 +119,8 @@ bot.on("message", function(msg) {
   }
   
   if (myMsg.indexOf("<@" + bot.user.id + "> shuffle") == 0) {
-	  userList = shuffle(userList)
+	  userList = shuffle(userList);
+	  currentPlayer = 0;
 	  var reply = "The list was shuffled. Use the Show Command to view the current list!";
 	  msg.reply(reply);
 	
@@ -133,8 +134,9 @@ bot.on("message", function(msg) {
 	  "Queue NAME: the person NAME enters the game!\n" +
 	  "Leave NAME: this person leaves the list\n"+
 	  "Truth: The player chooses Truth\n"+
-	  "Dare: The player chooses Dare"+
-	  "\nClear: Only use this if you want to end the whole game";
+	  "Dare: The player chooses Dare\n"+
+	  "Shuffle: Shuffles the list randomly. Use this at the end of the round. or let me do it...\n" +
+	  "Clear: Only use this if you want to end the whole game";
       msg.reply(infomsg);
   }
   

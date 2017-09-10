@@ -14,8 +14,8 @@ console.log = function(d) { //
   log_stdout.write(util.format(d) + '\n');
 };
 
-// var token = 'TOKEN HERE'; 
-var token = 'MzUyMjYyOTUzMTU3OTE4NzIx.DJG6aw.qPPclEb2E1JeL-A4gaEt0WpOIi4';
+// Discord BOT Token
+var token = 'Test';
 
 var counter = 0;
 var currentPlayer = 0;
@@ -87,17 +87,12 @@ bot.on("ready", function(msg) {
 		if (myMsg.indexOf("<@" + bot.user.id + "> dare") == 0) {
 			var askerName, playerName, newMsg;
 			
-			if(currentPlayer == 0) askerName = userList[userList.length() -1];
+			if(currentPlayer == 0) askerName = userList[userList.length -1];
 			else askerName = userList[currentPlayer -1];
 			
 			playerName = searchIndex(userList, currentPlayer);
 			newMsg = "You called Dare! Player " + playerName + 
 			" wants to get a Dare! Player " + askerName + " please give the other player something to do!";
-			currentPlayer++;
-			msg.reply(newMsg);
-			
-			var newMsg = "You called Dare! Player #" + 
-			(currentPlayer+1) + " wants to get a Dare!";
 			currentPlayer++;
 			msg.reply(newMsg);
 		}
@@ -121,8 +116,7 @@ bot.on("ready", function(msg) {
 			});
 
 			userList = filtered;
-			//list = list + counter + " - " + myMsg.split(" ")[2] + "\n";
-			msg.reply(userList[counter] + " joined the game!");
+			msg.reply(userList[counter] + " leaved the game!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> show") == 0) {

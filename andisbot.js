@@ -15,7 +15,7 @@ console.log = function(d) { //
 };
 
 // Discord BOT Token
-var token = 'Test';
+var token = '';
 
 var counter = 0;
 var currentPlayer = 0;

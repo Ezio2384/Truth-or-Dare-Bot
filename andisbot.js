@@ -74,13 +74,18 @@ bot.on("ready", function(msg) {
 		if (myMsg.indexOf("<@" + bot.user.id + "> truth") == 0) {
 			var askerName, playerName, newMsg;
 			
-			if(currentPlayer == 0) askerName = userList[userList.length() -1];
+			if(currentPlayer == 0) askerName = userList[userList.length -1];
 			else askerName = userList[currentPlayer -1];
 			
-			playerName = searchIndex(userList, currentPlayer);
-			newMsg = "You called Truth! Player " + playerName + 
-			" wants to get a Question! Player " + askerName + " please ask him a Question!";
-			currentPlayer++;
+			playerName = userList[currentPlayer];
+			
+			if(currentPlayer >= userList.length) newMsg = "End of round! Use the Shuffle command to start another round!";
+			else{
+				newMsg = "You called Truth! Player " + playerName + 
+				" wants to get a Question! Player " + askerName + " please ask him a Question!";
+				currentPlayer++;
+			}
+			
 			msg.reply(newMsg);
 		}
 
@@ -90,10 +95,15 @@ bot.on("ready", function(msg) {
 			if(currentPlayer == 0) askerName = userList[userList.length -1];
 			else askerName = userList[currentPlayer -1];
 			
-			playerName = searchIndex(userList, currentPlayer);
-			newMsg = "You called Dare! Player " + playerName + 
-			" wants to get a Dare! Player " + askerName + " please give the other player something to do!";
-			currentPlayer++;
+			playerName = userList[currentPlayer];
+			
+			if(currentPlayer >= userList.length) newMsg = "End of round! Use the Shuffle command to start another round!";
+			else{
+				newMsg = "You called Dare! Player " + playerName + 
+				" wants to get a Dare! Player " + askerName + " please give the other player something to do!";
+				currentPlayer++;
+			}
+			
 			msg.reply(newMsg);
 		}
 		
@@ -157,7 +167,7 @@ bot.on("ready", function(msg) {
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> help") == 0) {
-		msg.reply("This bot was created by Ezio and only works locally at the moment. Drop him a DM if you need something <3");
+		msg.reply("This bot was created by Ezio and only works locally at the moment. Drop him a DM if you need something");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> clear") == 0) {

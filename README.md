@@ -1,7 +1,8 @@
-[![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)[![forthebadge](http://forthebadge.com/images/badges/ages-12.svg)](http://forthebadge.com)[![forthebadge](http://forthebadge.com/images/badges/uses-git.svg)](http://forthebadge.com)[![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)[![forthebadge](http://forthebadge.com/images/badges/built-by-hipsters.svg)](http://forthebadge.com)[![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
-
-# TruthAndDareBot-Discord-Edition [![Build Status](https://travis-ci.org/TheRealUnknownDeveloper/TruthAndDareBot-Discord-Edition.svg?branch=master)](https://travis-ci.org/TheRealUnknownDeveloper/TruthAndDareBot-Discord-Edition)
-A Truth and Dare Bot made by @UnknownDeveloper
+A Truth and Dare Bot made by @UnknownDeveloper and Ezio
+To get started I took a publicly available bot and snipped it down to like 10 lines. The bot functionality in short.
+Then I made a developer account, Test-Discord-Server and at the moment I can run the bot locally and it sits in the chat as a person on my Test-server.
+However it doesn not run outsourced on a server yet.
+Here is the basic instruction of the bot that I started with:
 
 #How to run
 1. Make a new discord app at: discordapp.com/developers/applications/me
@@ -14,10 +15,3 @@ You will see a webpage when it's succesfull telling you information about the bo
 8. The bot will be turned on and you have to add it on the server by doing this `https://discordapp.com/oauth2/authorize?&client_id=*CLIENT/APPLICATION ID*&scope=bot `
 9. When bot is added to find the client id is type \ before mentioning the username and you'll get the id
 10. Replace the id's with the one's in the runbot.js
-
-
-# If you'd like to help
-You can help by the following: Report issues, errors, suggestions, Help improve the code for the bot or if you'd like to keep it up and running donate using bitcoins at: 1LLGFUnY2kh5n7u3vJXZn43xKpmY1dPh6c
-
-# Contact
-@UnknownDeveloper#2068(Discord) & /u/UnknownDeveloper(Reddit)

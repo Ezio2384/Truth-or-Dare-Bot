@@ -1,0 +1,259 @@
+
+KurisuCutie ?? - Today at 21:47
+@TorD Bot clear
+TorD BotBOT - Today at 21:47
+@KurisuCutie ??, List got cleared!
+KurisuCutie ?? - Today at 21:48
+@TorD Bot show
+TorD BotBOT - Today at 21:48
+@KurisuCutie ??, --- Current userlist ---
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:56
+@TorD Bot show
+TorD BotBOT - Today at 23:56
+@KurisuCutie ??, --- Current userlist ---
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:56
+@TorD Bot join Andi
+TorD BotBOT - Today at 23:56
+@KurisuCutie ??, Andi joined the game!
+KurisuCutie ?? - Today at 23:56
+@TorD Bot join Viki
+TorD BotBOT - Today at 23:56
+@KurisuCutie ??, Viki joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Don
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Don joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Duelist
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Duelist joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Sheep
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Sheep joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Dad
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Dad joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Mom
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Mom joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Sister
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Sister joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot join Brother
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, Brother joined the game!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot show
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, --- Current userlist ---
+1: Andi
+2: Viki
+3: Don
+4: Duelist
+5: Sheep
+6: Dad
+7: Mom
+8: Sister
+9: Brother
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:57
+@TorD Bot shuffle
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, The list was shuffled. Use the Show Command to view the current list!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Don wants to get a Question! Player Sister please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot show
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, --- Current userlist ---
+1: Don
+--> 2: Duelist
+3: Andi
+4: Mom
+5: Brother
+6: Dad
+7: Viki
+8: Sheep
+9: Sister
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Duelist wants to get a Question! Player Don please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Andi wants to get a Question! Player Duelist please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Mom wants to get a Question! Player Andi please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Brother wants to get a Question! Player Mom please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Dad wants to get a Question! Player Brother please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+@TorD Bot show
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Viki wants to get a Question! Player Dad please ask him a Question!
+@KurisuCutie ??, You called Truth! Player Sheep wants to get a Question! Player Viki please ask him a Question!
+@KurisuCutie ??, --- Current userlist ---
+1: Don
+2: Duelist
+3: Andi
+4: Mom
+5: Brother
+6: Dad
+7: Viki
+8: Sheep
+--> 9: Sister
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Sister wants to get a Question! Player Sheep please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot shuffle
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, The list was shuffled. Use the Show Command to view the current list!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Viki wants to get a Question! Player Don please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Andi wants to get a Question! Player Viki please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Mom wants to get a Question! Player Andi please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Sheep wants to get a Question! Player Mom please ask him a Question!
+KurisuCutie ?? - Today at 23:57
+@TorD Bot truth
+@TorD Bot truth
+@TorD Bot truth
+@TorD Bot truth
+@TorD Bot truth
+@TorD Bot truth
+TorD BotBOT - Today at 23:57
+@KurisuCutie ??, You called Truth! Player Brother wants to get a Question! Player Sheep please ask him a Question!
+@KurisuCutie ??, You called Truth! Player Dad wants to get a Question! Player Brother please ask him a Question!
+@KurisuCutie ??, You called Truth! Player Sister wants to get a Question! Player Dad please ask him a Question!
+@KurisuCutie ??, You called Truth! Player Duelist wants to get a Question! Player Sister please ask him a Question!
+@KurisuCutie ??, You called Truth! Player Don wants to get a Question! Player Duelist please ask him a Question!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot truth
+@TorD Bot truth
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot shuffle
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, The list was shuffled. Use the Show Command to view the current list!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot show
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, --- Current userlist ---
+--> 1: Sheep
+2: Don
+3: Brother
+4: Viki
+5: Dad
+6: Sister
+7: Mom
+8: Duelist
+9: Andi
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:58
+@TorD Bot dare
+@TorD Bot dare
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, You called Dare! Player Sheep wants to get a Dare! Player Andi please give the other player something to do!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot dare
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, You called Dare! Player Don wants to get a Dare! Player Sheep please give the other player something to do!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot dare
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, You called Dare! Player Brother wants to get a Dare! Player Don please give the other player something to do!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot dare
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, You called Dare! Player Viki wants to get a Dare! Player Brother please give the other player something to do!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot dare
+@TorD Bot dare
+@TorD Bot dare
+@TorD Bot dare
+@TorD Bot dare
+@TorD Bot dare
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, You called Dare! Player Dad wants to get a Dare! Player Viki please give the other player something to do!
+@KurisuCutie ??, You called Dare! Player Sister wants to get a Dare! Player Dad please give the other player something to do!
+@KurisuCutie ??, You called Dare! Player Mom wants to get a Dare! Player Sister please give the other player something to do!
+@KurisuCutie ??, You called Dare! Player Duelist wants to get a Dare! Player Mom please give the other player something to do!
+@KurisuCutie ??, You called Dare! Player Andi wants to get a Dare! Player Duelist please give the other player something to do!
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+@KurisuCutie ??, End of round! Use the Shuffle command to start another round!
+KurisuCutie ?? - Today at 23:58
+@TorD Bot show
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, --- Current userlist ---
+1: Sheep
+2: Don
+3: Brother
+4: Viki
+5: Dad
+6: Sister
+7: Mom
+8: Duelist
+9: Andi
+--- To randomize use the command shuffle! The player with --> is the current player ---
+KurisuCutie ?? - Today at 23:58
+@TorD Bot help
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, This bot was created by Ezio and only works locally at the moment. Drop him a DM if you need something
+KurisuCutie ?? - Today at 23:58
+@TorD Bot info
+TorD BotBOT - Today at 23:58
+@KurisuCutie ??, Available Commands:
+Info and Help: Name says it all
+Show: Shows the current list of people playing
+Join NAME: the person NAME enters the game!
+Leave NAME: this person leaves the list
+Truth: The player chooses Truth
+Dare: The player chooses Dare
+Shuffle: Shuffles the list randomly. Use this at the end of the round. or let me do it...
+Clear: Only use this if you want to end the whole game
+KurisuCutie ?? - Today at 23:59
+@TorD Bot clear
+TorD BotBOT - Today at 23:59
+@KurisuCutie ??, List got cleared!

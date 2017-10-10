@@ -59,7 +59,7 @@ function searchIndex(myArray, index){
 }
 
 bot.on("ready", function(msg) {
-	console.log("Woops! Bot logged in under the name of " + bot.user.username + " and the user ID of " + bot.user.id)
+	console.log("TorD Bot is online master! Bot logged in under the name of " + bot.user.username + " and the user ID of " + bot.user.id);
 	})
 	
 	//Msg comes in start
@@ -111,33 +111,34 @@ bot.on("ready", function(msg) {
 		  userList[counter] = oldOGMsg.split(" ")[2];
 		  
 		  counter++;
-		  currentPlayer++;
+		  //currentPlayer++;
 		  msg.reply(userList[counter-1] + " joined the game!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> leave") == 0) {
 			console.log("Leave was called");
+			var playername = myMsg.split(" ")[2];
 			counter--;
-			var resultObject = search(userList, myMsg.split(" ")[2]);
+			var resultObject = search(userList, playername);
 
 			var filtered = userList.filter(function(el) {
 			return el !== resultObject;
 			});
 
 			userList = filtered;
-			msg.reply(userList[counter] + " leaved the game!");
+			msg.reply(playername + " left the game!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> show") == 0) {
 			console.log("Show was called");
 			
-			var reply = "--- Current userlist ---" + "\n";
+			var reply = "--- Current user list ---" + "\n";
 
-			for(var i = 1; i < userList.length; i++){
-				if((i-1) === currentPlayer){
+			for(var i = 0; i < userList.length; i++){
+				if((i) === currentPlayer){
 					reply = reply + "--> ";
 				}
-				reply = reply + i + ": " + userList[i-1] + "\n";
+				reply = reply + (i+1) + ": " + userList[i] + "\n";
 			}
 
 			reply = reply + "--- To randomize use the command shuffle! The player with --> is the current player ---";
@@ -170,7 +171,7 @@ bot.on("ready", function(msg) {
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> help") == 0) {
 			console.log("Help was called");
-			msg.reply("This bot was created by Ezio and only works locally at the moment. Drop him a DM if you need something");
+			msg.reply("This bot was created by Ezio#2364 and only works locally at the moment. Drop him a DM if you need something");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> clear") == 0) {

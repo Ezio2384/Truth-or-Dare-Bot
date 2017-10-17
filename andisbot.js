@@ -1,6 +1,6 @@
-var Discord = require("discord.js")
-var request = require("request")
-var fs = require('fs')
+var Discord = require("discord.js");
+var request = require("request");
+var fs = require('fs');
 var bot = new Discord.Client({
   autoReconnect: true
 })
@@ -15,7 +15,8 @@ console.log = function(d) { //
 };
 
 // Discord BOT Token
-var token = ""
+//var token = "";
+var token = require("token.txt");
 
 var counter = 0;
 var currentPlayer = 0;

@@ -1,6 +1,8 @@
 var Discord = require("discord.js");
 var request = require("request");
 var fs = require('fs');
+
+
 var bot = new Discord.Client({
   autoReconnect: true
 })
@@ -16,12 +18,33 @@ console.log = function(d) { //
 
 // Discord BOT Token
 //var token = "";
-var token = require("token.txt");
+var token = fs.readFileSync("token.txt", "utf8");
 
 var counter = 0;
 var currentPlayer = 0;
 
 var userList = [];
+
+function loadMemes() {
+	var location = __dirname + "/memes";
+	console.log(location);
+}
+
+function readTextFile(file) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                return allText = rawFile.responseText;
+            }
+        }
+    }
+    rawFile.send(null);
+}
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -67,12 +90,16 @@ function TorDFunctionality(userList, currentPlayer, mode){
 bot.on("ready", function(msg) {
 	console.log("TorD Bot is online! Bot logged in under the name of " + bot.user.username + " and the user ID of " + bot.user.id);
 	})
+	//loadMemes();
 	
 	//Msg comes in
 	bot.on("message", function(msg) {
 
 		var oldOGMsg = msg.content;
-		var myMsg = msg.content.toLowerCase();
+		var myMsg = oldOGMsg.toLowerCase();
+		var author = msg.author;
+		//console.log(author);
+		
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> truth") == 0) {
 			console.log("Truth was called");
@@ -94,24 +121,24 @@ bot.on("ready", function(msg) {
 		
 		if (myMsg.indexOf("<@" + bot.user.id + "> join") == 0) {
 		  console.log("Join was called");
-		  userList[counter] = oldOGMsg.split(" ")[2];
+		  
+		  userList[counter] = author;
 		  
 		  counter++;
 		  //currentPlayer++;
-		  msg.reply(userList[counter-1] + " joined the game!");
+		  msg.reply(author + " joined the game!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> leave") == 0) {
 			console.log("Leave was called");
-			var playername = myMsg.split(" ")[2];
 			counter--;
 
 			var filtered = userList.filter(function(el) {
-				return el !== playername;
+				return el !== author;
 			});
 
 			userList = filtered;
-			msg.reply(playername + " left the game!");
+			msg.reply(author + " left the game!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> show") == 0) {
@@ -154,21 +181,21 @@ bot.on("ready", function(msg) {
 			console.log("Info was called");
 			var infomsg =
 			"Available Commands:\n" +
-			"Info and Help: Name says it all\n" + 
-			"Show: Shows the current list of people playing\n" + 
-			"Join NAME: the person NAME enters the game!\n" +
-			"Leave NAME: this person leaves the list\n"+
-			"Truth: The player chooses Truth\n"+
-			"Dare: The player chooses Dare\n"+
-			"Shuffle: Shuffles the list randomly. Use this at the end of the round. or let me do it...\n" +
-			"Clear: Only use this if you want to end the whole game";
+			"Info and Help: Show this or the Help message.\n" + 
+			"Show: Shows the current list of people.\n" + 
+			"Join: the person calling this command enters the game!\n" +
+			"Leave NAME: the person calling this command leaves the game.\n"+
+			"Truth: The player chooses Truth.\n"+
+			"Dare: The player chooses Dare.\n"+
+			"Shuffle: Shuffles the list randomly. Use this at the end of the round.\n" +
+			"Clear: Only use this if you want to end the whole game.";
 			msg.reply(infomsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> help") == 0) {
 			console.log("Help was called");
 			msg.reply("This bot was created by Ezio#2364 and only works locally at the moment. This means that the bot is offline normally.\n" + 
-			"If you guys want to play a round of Truth or Dare, just send me a DM and I can start the bot :)");
+			"If you guys want to play a round of Truth or Dare, just send me a DM and I can start the bot!");
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> clear") == 0) {

@@ -16,15 +16,6 @@ console.log = function(d) { //
   log_stdout.write(util.format(d) + '\n');
 };
 
-// Discord BOT Token
-//var token = "";
-var token = fs.readFileSync("token.txt", "utf8");
-
-var counter = 0;
-var currentPlayer = 0;
-
-var userList = [];
-
 function loadMemes() {
 	var location = __dirname + "/memes";
 	console.log(location);
@@ -87,6 +78,24 @@ function TorDFunctionality(userList, currentPlayer, mode){
 	return msg;
 }
 
+//returns -1 if the user is not in the list, or the index of the user in the list
+function isUserInList(user){
+	var output = -1;
+	for(var i = 0; i < userList.length; i++){
+		if(userList[i] == user) output = i;
+	}
+	return output;
+}
+
+//Bot Token
+var token = fs.readFileSync("token.txt", "utf8");
+//Total number of players
+var counter = 0;
+//Current Player
+var currentPlayer = 0;
+//List of all players
+var userList = [];
+
 bot.on("ready", function(msg) {
 	console.log("TorD Bot is online! Bot logged in under the name of " + bot.user.username + " and the user ID of " + bot.user.id);
 	})
@@ -98,111 +107,150 @@ bot.on("ready", function(msg) {
 		var oldOGMsg = msg.content;
 		var myMsg = oldOGMsg.toLowerCase();
 		var author = msg.author;
-		//console.log(author);
+		var outMsg = "";
 		
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> truth") == 0) {
 			console.log("Truth was called");
 			
-			var newMsg = TorDFunctionality(userList, currentPlayer, 0)
-			currentPlayer++;
+			if(currentPlayer == userList.length){
+				outMsg = "this round has ended. please use the shuffle command!";
+			}
+			else if(author !== userList[currentPlayer]){
+				outMsg = "it is not your turn. " + userList[currentPlayer] + " has to call Truth or Dare."
+			}
+			else{
+				outMsg = TorDFunctionality(userList, currentPlayer, 0)
+				currentPlayer++;
+			}
 			
-			msg.reply(newMsg);
+			msg.reply(outMsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> dare") == 0) {
 			console.log("Dare was called");
 			
-			var newMsg = TorDFunctionality(userList, currentPlayer, 1)
-			currentPlayer++;
+			if(currentPlayer == userList.length){
+				outMsg = "this round has ended. please use the shuffle command!";
+			}
+			else if(author !== userList[currentPlayer]){
+				outMsg = "it is not your turn. " + userList[currentPlayer] + " has to call Truth or Dare."
+			}
+			else{
+				outMsg = TorDFunctionality(userList, currentPlayer, 1)
+				currentPlayer++;
+			}
 			
-			msg.reply(newMsg);
+			msg.reply(outMsg);
 		}
 		
 		if (myMsg.indexOf("<@" + bot.user.id + "> join") == 0) {
-		  console.log("Join was called");
-		  
-		  userList[counter] = author;
-		  
-		  counter++;
-		  //currentPlayer++;
-		  msg.reply(author + " joined the game!");
+			console.log("Join was called");
+			
+			var index = isUserInList(author);
+			if(index == -1){
+				userList[counter] = author;
+				counter++;
+				outMsg = "you joined the game!"
+			}
+			else{
+				outMsg = "you are on the list already!"
+			}
+			msg.reply(outMsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> leave") == 0) {
 			console.log("Leave was called");
-			counter--;
-
-			var filtered = userList.filter(function(el) {
-				return el !== author;
-			});
-
-			userList = filtered;
-			msg.reply(author + " left the game!");
+			
+			var index = isUserInList(author);
+			if(index == -1){
+				outMsg = "you are not on the list!";
+			}
+			else{
+				var filtered = userList.filter(function(el) {
+					return el !== author;
+				});
+				userList = filtered;
+				counter--;
+			
+				outMsg = "you left the game!"
+			}
+			msg.reply(outMsg);
 		}
 
-		if (myMsg.indexOf("<@" + bot.user.id + "> show") == 0) {
-			console.log("Show was called");
+		if (myMsg.indexOf("<@" + bot.user.id + "> list") == 0) {
+			console.log("List was called");
 			
-			var reply = "--- Current user list ---" + "\n";
-
+			outMsg = "--- Current user list ---\n";
 			for(var i = 0; i < userList.length; i++){
 				if((i) === currentPlayer){
-					reply = reply + "--> ";
+					outMsg += "--> ";
 				}
-				reply = reply + (i+1) + ": " + userList[i] + "\n";
+				outMsg += (i+1) + ": " + userList[i] + "\n";
 			}
-
-			reply = reply + "--- To randomize use the command shuffle! The player with --> is the current player ---";
-			msg.reply(reply);
-
+			outMsg += "--- To randomize use the command shuffle! The player with --> is the current player ---";
+			
+			msg.reply(outMsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> shuffle") == 0) {
 			console.log("Shuffle was called");
-			userList = shuffle(userList);
-			currentPlayer = 0;
-			var reply = "The list was shuffled.\n" +
-				"--- Current user list ---\n";
-
-			for(var i = 0; i < userList.length; i++){
-				if((i) === currentPlayer){
-					reply = reply + "--> ";
-				}
-				reply = reply + (i+1) + ": " + userList[i] + "\n";
-			}
-
-			reply = reply + "--- To randomize use the command shuffle! The player with --> is the current player ---";
 			
-			msg.reply(reply);
+			if(currentPlayer != userList.length){
+				outMsg = "the round is not over yet!";
+			}
+			else {
+				userList = shuffle(userList);
+				currentPlayer = 0;
+				
+				outMsg = "The list was shuffled.\n" +
+					"--- Current user list ---\n";
+				for(var i = 0; i < userList.length; i++){
+					if((i) === currentPlayer){
+						outMsg += "--> ";
+					}
+					outMsg += (i+1) + ": " + userList[i] + "\n";
+				}
+				outMsg += "--- To randomize use the command shuffle! The player with --> is the current player ---";
+			}
+			
+			msg.reply(outMsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> info") == 0) {
 			console.log("Info was called");
-			var infomsg =
-			"Available Commands:\n" +
-			"Info and Help: Show this or the Help message.\n" + 
-			"Show: Shows the current list of people.\n" + 
-			"Join: the person calling this command enters the game!\n" +
-			"Leave NAME: the person calling this command leaves the game.\n"+
-			"Truth: The player chooses Truth.\n"+
-			"Dare: The player chooses Dare.\n"+
+			
+			outMsg = "Available Commands:\n" +
+			"Info: Show the information message.\n" +
+			"Help: Show the help message.\n" +
+			"List: Shows the current list of people.\n" +
+			"Join: The player enters the game.\n" +
+			"Leave: The player leaves the game.\n" +
+			"Truth: The player chooses Truth.\n" +
+			"Dare: The player chooses Dare.\n" +
 			"Shuffle: Shuffles the list randomly. Use this at the end of the round.\n" +
 			"Clear: Only use this if you want to end the whole game.";
-			msg.reply(infomsg);
+			
+			msg.reply(outMsg);
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> help") == 0) {
 			console.log("Help was called");
-			msg.reply("This bot was created by Ezio#2364 and only works locally at the moment. This means that the bot is offline normally.\n" + 
-			"If you guys want to play a round of Truth or Dare, just send me a DM and I can start the bot!");
+			
+			msg.reply("This bot was created by Ezio#2364 and only works locally at the moment. This means that the bot is offline normally. " + 
+				"But there are some events on servers already.");
+				
 		}
 
 		if (myMsg.indexOf("<@" + bot.user.id + "> clear") == 0) {
+			console.log("Clear was called");
+			
 			userList = [];
 			counter = 0;
 			currentPlayer = 0;
-			msg.reply("List got cleared!");
+			outMsg = "List got cleared!";
+			
+			msg.reply(outMsg);
 		}
 	});
 	//Msg comes in end
